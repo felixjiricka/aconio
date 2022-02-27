@@ -4,7 +4,9 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
-
+import { HomeModule } from './modules/home/home.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
     declarations: [AppComponent],
@@ -12,6 +14,9 @@ import {CoreModule} from './core/core.module';
         BrowserModule,
         AppRoutingModule,
         CoreModule,
+        HomeModule,
+        HttpClientModule,
+        AngularSvgIconModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -19,13 +19,13 @@
         "@angular/platform-browser": "~13.2.4",
         "@angular/platform-browser-dynamic": "~13.2.4",
         "@angular/router": "~13.2.4",
-        "@ngneat/svg-icon": "^4.0.2",
+        "angular-svg-icon": "^13.0.0",
+        "bluebird": "^3.7.2",
         "rxjs": "~6.6.0",
         "zone.js": "~0.10.2"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~13.2.5",
-        "@angular-extensions/svg-icons-builder": "^3.0.0",
         "@angular/cli": "~13.2.5",
         "@angular/compiler-cli": "~13.2.4",
         "@types/jasmine": "~3.6.0",
