@@ -7,6 +7,7 @@ import {CoreModule} from './core/core.module';
 import { HomeModule } from './modules/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
     declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
         CoreModule,
         HomeModule,
         HttpClientModule,
-        AngularSvgIconModule.forRoot()
+        AngularSvgIconModule.forRoot(),
+        NgChartsModule
     ],
     providers: [],
     bootstrap: [AppComponent],

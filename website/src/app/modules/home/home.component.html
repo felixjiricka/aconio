@@ -62,7 +62,7 @@
                 class="inline-flex items-center whitespace-nowrap py-2 border border-transparent rounded-md text-base text-red-600 bg-transparent hover:text-red-700">
                 Mehr über RPA erfahren
 
-                <svg-icon name="arrow-right"></svg-icon>
+                <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-5 h-5'"></svg-icon>
             </a>
         </div>
 
@@ -128,11 +128,46 @@
     </h1>
 
     <div class="relative mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
-        <aconio-info-card icon="clock" header="Effizienz steigern" content="Entlasten Sie Ihre Mitarbeiter von repetitiven Tätigkeiten und fokussieren Sie sich auf das Wesentliche."></aconio-info-card>
-        <aconio-info-card icon="currency-dollar" header="Kosten senken" content="Unsere Roboter sind 24/7 einsatzbereit und können Prozesse durchführen."></aconio-info-card>
-        <aconio-info-card icon="exclamation-circle" header="Fehler reduzieren" content="Roboter arbeiten konsistent und verlässlich. Mitarbeiter können kritische Schritte zusätzlich validieren."></aconio-info-card>
-        <aconio-info-card icon="document" header="Richtlinien folgen" content="Prozesse können durch die konsistente Arbeitsweise der Roboter leichter an Richtlinien angepasst werden."></aconio-info-card>
-        <aconio-info-card icon="thumb-up" header="Zufriedenheit erhöhen" content="Überzeugen Sie Ihre Kunden durch schnellere Antwortzeiten und Verarbeitung von Stammdaten."></aconio-info-card>
-        <aconio-info-card icon="credit-card" header="Pay-As-You-Go" content="Bezahlen Sie nur für die Zeit die Ihr Prozess auch tatsächlich in Anspruch nimmt."></aconio-info-card>
+        <aconio-info-card icon="clock" header="Effizienz steigern"
+            content="Entlasten Sie Ihre Mitarbeiter von repetitiven Tätigkeiten und fokussieren Sie sich auf das Wesentliche.">
+        </aconio-info-card>
+        <aconio-info-card icon="currency-dollar" header="Kosten senken"
+            content="Unsere Roboter sind 24/7 einsatzbereit und können Prozesse durchführen."></aconio-info-card>
+        <aconio-info-card icon="exclamation-circle" header="Fehler reduzieren"
+            content="Roboter arbeiten konsistent und verlässlich. Mitarbeiter können kritische Schritte zusätzlich validieren.">
+        </aconio-info-card>
+        <aconio-info-card icon="document" header="Richtlinien folgen"
+            content="Prozesse können durch die konsistente Arbeitsweise der Roboter leichter an Richtlinien angepasst werden.">
+        </aconio-info-card>
+        <aconio-info-card icon="thumb-up" header="Zufriedenheit erhöhen"
+            content="Überzeugen Sie Ihre Kunden durch schnellere Antwortzeiten und Verarbeitung von Stammdaten.">
+        </aconio-info-card>
+        <aconio-info-card icon="credit-card" header="Pay-As-You-Go"
+            content="Bezahlen Sie nur für die Zeit die Ihr Prozess auch tatsächlich in Anspruch nimmt.">
+        </aconio-info-card>
+    </div>
+</div>
+
+<div class="relative my-16 md:my-32 lg:my-64 rounded-2xl bg-zinc-900 p-16 md:flex gap-4 w-11/12 max-w-5xl mx-auto">
+    <div class="w-full md:w-3/5">
+        
+    </div>
+
+    <div class="w-full md:w-2/5">
+        <h2 class="text-white text-4xl">
+            Sparen Sie jetzt monatlich Zeit und Geld.
+        </h2>
+
+        <p class="text-gray-300 text-sm mt-6">
+            Mithilfe unserem kostenlosen Ersparnisrechners können Sie im Handumdrehen testen wie hoch die mögliche
+            monatliche Ersparnis
+            ist.
+        </p>
+
+        <a href="#"
+            class="mt-8 whitespace-nowrap inline-flex items-center justify-center px-5 py-2 border border-transparent rounded-md text-base text-white bg-red-600 hover:bg-red-700">
+            Ersparnisrechner testen
+            <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-5 h-5'"></svg-icon>
+        </a>
     </div>
 </div>
