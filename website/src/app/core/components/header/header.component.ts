@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
     selector: 'aconio-header',
@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
     menuVisible: boolean = false;
 
-    constructor() {}
+    constructor(public element: ElementRef) {}
 
     ngOnInit(): void {}
 

@@ -23,8 +23,10 @@
     "angular-svg-icon": "^13.0.0",
     "bluebird": "^3.7.2",
     "chart.js": "^3.6.0",
+    "gsap": "^3.9.1",
     "ng2-charts": "^3.0.8",
     "rxjs": "~6.6.0",
+    "smooth-scrollbar": "^8.7.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
