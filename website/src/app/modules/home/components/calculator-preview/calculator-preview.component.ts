@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 
 @Component({
@@ -6,7 +6,7 @@ import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
     templateUrl: './calculator-preview.component.html',
     styleUrls: ['./calculator-preview.component.css'],
 })
-export class CalculatorPreviewComponent implements OnInit {
+export class CalculatorPreviewComponent implements OnInit, AfterViewInit {
     public barChartOptions: ChartOptions = {
         responsive: true,
         plugins: {
@@ -69,4 +69,8 @@ export class CalculatorPreviewComponent implements OnInit {
     }
 
     ngOnInit(): void {}
+
+    ngAfterViewInit(): void {
+
+    }
 }
