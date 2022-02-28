@@ -7,6 +7,8 @@ import {gsap} from 'gsap/all';
 import { DisableScrollPlugin } from './core/plugins/DisableScrollPlugin';
 import { DisableScrollWhenModalOpenPlugin } from './core/plugins/DisableScrollOpenModal';
 import { HeaderComponent } from './core/components/header/header.component';
+import { NavigationEnd, Router } from '@angular/router';
+import SmoothScrollbar from 'smooth-scrollbar';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -17,10 +19,20 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild(HeaderComponent, {static: false}) header: HeaderComponent;
 
-    constructor(private iconReg: SvgIconRegistryService) {
+    constructor(private iconReg: SvgIconRegistryService, private router: Router) {
         ICONS.forEach((icon) => {
             console.log(icon);
             this.iconReg.addSvg(icon.name, icon.data);
+        });
+
+        this.router.events.subscribe((event: any) => {
+            if (event instanceof NavigationEnd) {
+                const scroller = SmoothScrollbar.getAll()[0];
+
+                if(scroller) {
+                    scroller.scrollTo(0, 0, 0)
+                }
+            }
         });
     }
 
