@@ -8,8 +8,8 @@ import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 })
 export class CalculatorPreviewComponent implements OnChanges {
     @Input() bars: {
-        data: number[],
-        labels: string[]
+        data: number[];
+        labels: string[];
     };
 
     public barChartOptions: ChartOptions = {
@@ -60,15 +60,12 @@ export class CalculatorPreviewComponent implements OnChanges {
     constructor() {}
 
     ngOnChanges(changes: SimpleChanges): void {
-        if(changes.bars.currentValue) {
+        if (changes.bars.currentValue) {
             this.updateChart(changes.bars.currentValue);
         }
     }
 
-    updateChart(data: {
-        data: number[],
-        labels: string[]
-    }) {
+    updateChart(data: {data: number[]; labels: string[]}) {
         this.barChartLabels = data.labels;
         this.barChartData = [];
 

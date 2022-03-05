@@ -9,7 +9,7 @@ import {AutomationProcess} from '../../../../core/datastructures/automation-proc
 })
 export class ProcessFormComponent implements AfterViewInit {
     monthlyCostMask = null;
-    hourlyRateMask = this.monthlyCostMask = {
+    hourlyRateMask = (this.monthlyCostMask = {
         mask: Number,
         scale: 2,
         signed: false,
@@ -17,17 +17,17 @@ export class ProcessFormComponent implements AfterViewInit {
         thousandsSeparator: '.',
         radix: ',',
         min: 0,
-        padFractionalZeros: true
-    };
+        padFractionalZeros: true,
+    });
 
     hourMask = {
-        mask: Number
-    }
+        mask: Number,
+    };
 
     _default: AutomationProcess = {
-        hourlyRate: 120.00,
-        hours: 20.00,
-        monthly: 700.00,
+        hourlyRate: 120.0,
+        hours: 20.0,
+        monthly: 700.0,
     };
 
     processForm: FormGroup;
@@ -49,7 +49,9 @@ export class ProcessFormComponent implements AfterViewInit {
             if (this.processForm.valid && this.checkIfPositive()) {
                 this.processChanged.emit(value as AutomationProcess);
             } else {
-                console.log('Form value is not valid, please make sure that the calculated monthly saving is positive');
+                console.log(
+                    'Form value is not valid, please make sure that the calculated monthly saving is positive'
+                );
             }
         });
     }

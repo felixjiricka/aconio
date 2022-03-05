@@ -1,4 +1,4 @@
 export interface ProcessChartData {
-    data: number[],
-    labels: string[]
+    data: number[];
+    labels: string[];
 }

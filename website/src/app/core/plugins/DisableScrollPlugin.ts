@@ -1,4 +1,4 @@
-import { ScrollbarPlugin } from "smooth-scrollbar";
+import {ScrollbarPlugin} from 'smooth-scrollbar';
 
 export class DisableScrollPlugin extends ScrollbarPlugin {
     static pluginName = 'disableScroll';
@@ -12,6 +12,6 @@ export class DisableScrollPlugin extends ScrollbarPlugin {
             delta[this.options.direction] = 0;
         }
 
-        return { ...delta };
+        return {...delta};
     }
 }

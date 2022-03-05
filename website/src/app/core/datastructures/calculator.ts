@@ -1,10 +1,10 @@
-import { AutomationProcess, CalculatedAutomationProcess } from "./automation-process.model";
+import {AutomationProcess, CalculatedAutomationProcess} from './automation-process.model';
 
 export class Calculator {
     private static developmentOptions = {
         hourlyRate: 75,
-        neededHours: 20
-    }
+        neededHours: 20,
+    };
 
     private static _defaultProcessKeys: number[] = [1, 2, 4, 10, 15];
 
@@ -13,14 +13,14 @@ export class Calculator {
         console.log(directSavings);
         const result: {
             monthly?: {
-                [key: number] : CalculatedAutomationProcess
-            },
+                [key: number]: CalculatedAutomationProcess;
+            };
             yearly?: {
-                [key: number] : CalculatedAutomationProcess
-            }
+                [key: number]: CalculatedAutomationProcess;
+            };
         } = {
             monthly: {},
-            yearly: {}
+            yearly: {},
         };
 
         this._defaultProcessKeys.forEach((amount) => {
@@ -28,13 +28,19 @@ export class Calculator {
 
             result.monthly[amount] = {
                 savings: monthlySavings,
-                developmentCosts: this.developmentOptions.hourlyRate * this.developmentOptions.neededHours * amount
-            }
+                developmentCosts:
+                    this.developmentOptions.hourlyRate *
+                    this.developmentOptions.neededHours *
+                    amount,
+            };
 
             result.yearly[amount] = {
                 savings: monthlySavings * 12,
-                developmentCosts: this.developmentOptions.hourlyRate * this.developmentOptions.neededHours * amount
-            }
+                developmentCosts:
+                    this.developmentOptions.hourlyRate *
+                    this.developmentOptions.neededHours *
+                    amount,
+            };
         });
 
         return result;

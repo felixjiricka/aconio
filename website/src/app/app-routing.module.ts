@@ -1,19 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CalculatorComponent } from './modules/calculator/calculator.component';
-import { HomeComponent } from './modules/home/home.component';
-import { ImprintComponent } from './modules/legal/pages/imprint/imprint.component';
-import { PrivacyPolicyComponent } from './modules/legal/pages/privacy-policy/privacy-policy.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {CalculatorComponent} from './modules/calculator/calculator.component';
+import {HomeComponent} from './modules/home/home.component';
+import {ImprintComponent} from './modules/legal/pages/imprint/imprint.component';
+import {PrivacyPolicyComponent} from './modules/legal/pages/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
     },
     // calculator
     {
         path: 'calculator',
-        component: CalculatorComponent
+        component: CalculatorComponent,
     },
     // legal
     {
@@ -21,22 +21,22 @@ const routes: Routes = [
         children: [
             {
                 path: 'imprint',
-                component: ImprintComponent
+                component: ImprintComponent,
             },
             {
                 path: 'privacy',
-                component: PrivacyPolicyComponent
+                component: PrivacyPolicyComponent,
             },
             {
                 path: '**',
-                redirectTo: '/'
-            }
-        ]
-    }
+                redirectTo: '/',
+            },
+        ],
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

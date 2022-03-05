@@ -4,10 +4,10 @@ import {ICONS} from './core/utils/icons';
 import Scrollbar from 'smooth-scrollbar';
 import {ScrollTrigger} from 'gsap/all';
 import {gsap} from 'gsap/all';
-import { DisableScrollPlugin } from './core/plugins/DisableScrollPlugin';
-import { DisableScrollWhenModalOpenPlugin } from './core/plugins/DisableScrollOpenModal';
-import { HeaderComponent } from './core/components/header/header.component';
-import { NavigationEnd, Router } from '@angular/router';
+import {DisableScrollPlugin} from './core/plugins/DisableScrollPlugin';
+import {DisableScrollWhenModalOpenPlugin} from './core/plugins/DisableScrollOpenModal';
+import {HeaderComponent} from './core/components/header/header.component';
+import {NavigationEnd, Router} from '@angular/router';
 import SmoothScrollbar from 'smooth-scrollbar';
 @Component({
     selector: 'app-root',
@@ -29,8 +29,8 @@ export class AppComponent implements AfterViewInit {
             if (event instanceof NavigationEnd) {
                 const scroller = SmoothScrollbar.getAll()[0];
 
-                if(scroller) {
-                    scroller.scrollTo(0, 0, 0)
+                if (scroller) {
+                    scroller.scrollTo(0, 0, 0);
                 }
             }
         });

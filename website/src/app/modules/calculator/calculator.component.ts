@@ -1,11 +1,11 @@
-import { KeyValue } from '@angular/common';
+import {KeyValue} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
 import {
     AutomationProcess,
     CalculatedAutomationProcess,
 } from '../../core/datastructures/automation-process.model';
 import {Calculator} from '../../core/datastructures/calculator';
-import { ProcessChartData } from '../../core/datastructures/process-chart-data.model';
+import {ProcessChartData} from '../../core/datastructures/process-chart-data.model';
 
 @Component({
     selector: 'aconio-calculator',
@@ -16,21 +16,21 @@ export class CalculatorComponent implements OnInit {
     calculatedProcess: {
         monthly?: {
             [key: number]: CalculatedAutomationProcess;
-        },
+        };
         yearly?: {
             [key: number]: CalculatedAutomationProcess;
-        }
+        };
     } = {};
 
     monthlySavingsChartData: ProcessChartData = {
         data: [],
-        labels: []
-    }
+        labels: [],
+    };
 
     yearlySavingsChartData: ProcessChartData = {
         data: [],
-        labels: []
-    }
+        labels: [],
+    };
 
     constructor() {}
 
@@ -51,7 +51,7 @@ export class CalculatorComponent implements OnInit {
 
         this.monthlySavingsChartData = {
             labels: labels,
-            data: data
+            data: data,
         };
 
         // yearly
@@ -66,8 +66,8 @@ export class CalculatorComponent implements OnInit {
 
         this.yearlySavingsChartData = {
             labels: labels,
-            data: data
-        }
+            data: data,
+        };
 
         console.log(this.calculatedProcess, this.monthlySavingsChartData);
     }
