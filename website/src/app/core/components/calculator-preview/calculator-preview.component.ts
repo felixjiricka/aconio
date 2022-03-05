@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
+import { ProcessChartData } from '../../datastructures/automation-process.model';
 
 @Component({
     selector: 'aconio-calculator-preview',
@@ -7,10 +8,7 @@ import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
     styleUrls: ['./calculator-preview.component.css'],
 })
 export class CalculatorPreviewComponent implements OnChanges {
-    @Input() bars: {
-        data: number[];
-        labels: string[];
-    };
+    @Input() bars: ProcessChartData;
 
     public barChartOptions: ChartOptions = {
         responsive: true,
@@ -21,6 +19,7 @@ export class CalculatorPreviewComponent implements OnChanges {
         },
         scales: {
             y: {
+                stacked: true,
                 ticks: {
                     callback: (value: string | number, index: number) => {
                         if (index % 2) return `€ ${Number(value).toLocaleString()}`;
@@ -34,6 +33,7 @@ export class CalculatorPreviewComponent implements OnChanges {
                 },
             },
             x: {
+                stacked: true,
                 ticks: {
                     color: '#a1a1aa',
                 },
@@ -65,20 +65,39 @@ export class CalculatorPreviewComponent implements OnChanges {
         }
     }
 
-    updateChart(data: {data: number[]; labels: string[]}) {
-        this.barChartLabels = data.labels;
+    updateChart(input: ProcessChartData) {
+        this.barChartLabels = input.labels;
         this.barChartData = [];
 
-        this.barChartData.push({
-            data: data.data,
-            backgroundColor: '#dc2626',
+        const BAR_CONFIG = {
             borderWidth: 2,
             borderColor: 'transparent',
             borderRadius: 10,
             borderSkipped: false,
             hoverBorderWidth: 2,
             hoverBorderColor: 'transparent',
-            hoverBackgroundColor: '#b91c1c',
-        });
+        }
+
+        const BAR_COLORS = [
+            {
+                static: '#dc2626',
+                hover: '#b91c1c'
+            },
+            {
+                static: '#fff',
+                hover: '#fff'
+            },
+        ]
+
+        console.log(input);
+        input.data.forEach((data, index) => {
+            this.barChartData.push({
+                label: index.toString(),
+                data: data,
+                backgroundColor: BAR_COLORS[index].static,
+                hoverBackgroundColor: BAR_COLORS[index].hover,
+                ...BAR_CONFIG
+            });
+        })
     }
 }

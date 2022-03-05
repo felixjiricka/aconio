@@ -57,31 +57,35 @@ export class Calculator {
         const chartData: IntervalProcessChartData = {};
 
         // monthly
-        let labels = [];
-        let data = [];
+        let savingsLabel = [];
+        let savingsData = [];
 
         Object.keys(calculated.monthly).forEach((key) => {
-            labels.push(`#${key}`);
-            data.push(calculated.monthly[key].savings);
+            savingsLabel.push(`#${key}`);
+            savingsData.push(calculated.monthly[key].savings);
         });
 
         chartData.monthly = {
-            labels: labels,
-            data: data,
+            labels: savingsLabel,
+            data: [savingsData],
         };
 
         // yearly
-        labels = [];
-        data = [];
+        savingsLabel = [];
+        savingsData = [];
+
+        let developmentData = [];
 
         Object.keys(calculated.yearly).forEach((key) => {
-            labels.push(`#${key}`);
-            data.push(calculated.yearly[key].savings);
+            savingsLabel.push(`#${key}`);
+            savingsData.push(calculated.yearly[key].savings);
+            developmentData.push(calculated.yearly[key].developmentCosts);
         });
 
         chartData.yearly = {
-            labels: labels,
-            data: data,
+            labels: savingsLabel,
+            //data: [developmentData, savingsData],
+            data: [savingsData],
         };
 
         return chartData;

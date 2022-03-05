@@ -19,7 +19,7 @@ export interface IntervalCalculatedAutomationProcess {
 }
 
 export interface ProcessChartData {
-    data: number[];
+    data: number[][];
     labels: string[];
 }
 
