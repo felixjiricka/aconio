@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CalculatorComponent } from './modules/calculator/calculator.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ImprintComponent } from './modules/legal/pages/imprint/imprint.component';
 import { PrivacyPolicyComponent } from './modules/legal/pages/privacy-policy/privacy-policy.component';
@@ -8,6 +9,11 @@ const routes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    // calculator
+    {
+        path: 'calculator',
+        component: CalculatorComponent
     },
     // legal
     {

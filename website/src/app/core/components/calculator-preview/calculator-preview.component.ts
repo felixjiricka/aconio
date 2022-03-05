@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 
 @Component({
@@ -6,7 +6,12 @@ import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
     templateUrl: './calculator-preview.component.html',
     styleUrls: ['./calculator-preview.component.css'],
 })
-export class CalculatorPreviewComponent implements OnInit, AfterViewInit {
+export class CalculatorPreviewComponent implements OnChanges {
+    @Input() bars: {
+        data: number[],
+        labels: string[]
+    };
+
     public barChartOptions: ChartOptions = {
         responsive: true,
         plugins: {
@@ -52,25 +57,31 @@ export class CalculatorPreviewComponent implements OnInit, AfterViewInit {
     public barChartPlugins = [];
     public barChartData: ChartDataset[] = [];
 
-    constructor() {
-        const montlySavings = [500, 1700, 4100, 11300, 17300];
-        const developmentCosts = [1500, 3000, 6000, 15000, 22500];
+    constructor() {}
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if(changes.bars.currentValue) {
+            this.updateChart(changes.bars.currentValue);
+        }
+    }
+
+    updateChart(data: {
+        data: number[],
+        labels: string[]
+    }) {
+        this.barChartLabels = data.labels;
+        this.barChartData = [];
 
         this.barChartData.push({
-            data: montlySavings,
+            data: data.data,
             backgroundColor: '#dc2626',
             borderWidth: 2,
             borderColor: 'transparent',
             borderRadius: 10,
+            borderSkipped: false,
             hoverBorderWidth: 2,
             hoverBorderColor: 'transparent',
             hoverBackgroundColor: '#b91c1c',
         });
-    }
-
-    ngOnInit(): void {}
-
-    ngAfterViewInit(): void {
-
     }
 }

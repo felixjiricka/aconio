@@ -1,0 +1,130 @@
+<!-- hero section -->
+<div class="mt-32 relative flex sm:container !max-w-7xl mx-auto lg:gap-16">
+    <div class="my-4 sm:my-0 grow">
+        <label class="text-red-600">
+            Robotic Process Automation
+        </label>
+
+        <h1 class="text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-medium">
+            Ersparnisrechner
+        </h1>
+
+        <p class="my-8 text-base md:text-lg lg:text-xl font-light">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam.
+        </p>
+    </div>
+
+
+    <div class="w-full flex lg:w-auto">
+        <aconio-process-form class="mt-auto" (processChanged)="processUpdate($event)"></aconio-process-form>
+    </div>
+</div>
+
+<div class="mt-32 relative flex sm:container !max-w-7xl mx-auto lg:gap-16">
+    <div class="w-full lg:w-1/2">
+        <label class="font-medium text-base md:text-lg xl:text-xl">Monatliche Ersparnis</label>
+        <p class="mt-0 text-sm md:text-base xl:text-lg font-normal text-gray-500">
+            Monatliche Ersparnis durch Verwendung von RPA bei x Prozessen.
+        </p>
+
+
+        <div class="relative mt-8">
+            <div class="flex flex-col">
+                <div class="overflow-x-auto">
+                    <div class="align-middle inline-block min-w-full">
+                        <div class="overflow-hidden border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-200">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Prozesse
+                                        </th>
+                                        <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-right">
+                                            Monatliche Ersparnis
+                                        </th>
+                                        <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-right">
+                                            Entwicklungskosten
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr *ngFor="let data of calculatedProcess.monthly | keyvalue:keyAscOrder">
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">{{data.key}} <ng-container *ngIf="data.key == 1">Prozess</ng-container><ng-container *ngIf="data.key > 1">Prozesse</ng-container></div>
+                                        </td>
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900 text-right">{{data.value.savings | currency:'EUR':'symbol':'.2-2':'de-AT' }}</div>
+                                        </td>
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900 text-right">{{data.value.developmentCosts | currency:'EUR':'symbol':'.2-2':'de-AT'}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-auto lg:w-1/2 rounded-3xl bg-zinc-900 p-8">
+        <aconio-calculator-preview [bars]="monthlySavingsChartData"></aconio-calculator-preview>
+    </div>
+</div>
+
+<div class="my-32 relative flex sm:container !max-w-7xl mx-auto lg:gap-16">
+    <div class="w-full lg:w-1/2">
+        <label class="font-medium text-base md:text-lg xl:text-xl">Jährliche Kosten-Nutzen Übersicht</label>
+        <p class="mt-0 text-sm md:text-base xl:text-lg font-normal text-gray-500">
+            Jährliche Ersparnis durch Verwendung von RPA bei x Prozessen.
+        </p>
+
+
+        <div class="relative mt-8">
+            <div class="flex flex-col">
+                <div class="overflow-x-auto">
+                    <div class="align-middle inline-block min-w-full">
+                        <div class="overflow-hidden border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-200">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Prozesse
+                                        </th>
+                                        <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-right">
+                                            Monatliche Ersparnis
+                                        </th>
+                                        <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-right">
+                                            Entwicklungskosten
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr *ngFor="let data of calculatedProcess.yearly | keyvalue:keyAscOrder">
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">{{data.key}} Prozess</div>
+                                        </td>
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900 text-right">{{data.value.savings | currency:'EUR':'symbol':'.2-2':'de-AT'}}</div>
+                                        </td>
+                                        <td class="px-6 py-3 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900 text-right">{{data.value.developmentCosts | currency:'EUR':'symbol':'.2-2':'de-AT'}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-auto lg:w-1/2 rounded-3xl bg-zinc-900 p-8">
+        <aconio-calculator-preview [bars]="yearlySavingsChartData"></aconio-calculator-preview>
+    </div>
+</div>

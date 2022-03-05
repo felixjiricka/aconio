@@ -8,6 +8,11 @@ import { HomeModule } from './modules/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NgChartsModule } from 'ng2-charts';
+import { CalculatorModule } from './modules/calculator/calculator.module';
+import { registerLocaleData } from '@angular/common';
+import * as locale from '@angular/common/locales/de-AT'
+
+registerLocaleData(locale.default, 'de-AT');
 
 @NgModule({
     declarations: [AppComponent],
@@ -16,6 +21,7 @@ import { NgChartsModule } from 'ng2-charts';
         AppRoutingModule,
         CoreModule,
         HomeModule,
+        CalculatorModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
         NgChartsModule
