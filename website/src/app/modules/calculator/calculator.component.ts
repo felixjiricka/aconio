@@ -3,9 +3,11 @@ import {Component, OnInit} from '@angular/core';
 import {
     AutomationProcess,
     CalculatedAutomationProcess,
+    IntervalCalculatedAutomationProcess,
+    IntervalProcessChartData,
+    ProcessChartData,
 } from '../../core/datastructures/automation-process.model';
 import {Calculator} from '../../core/datastructures/calculator';
-import {ProcessChartData} from '../../core/datastructures/process-chart-data.model';
 
 @Component({
     selector: 'aconio-calculator',
@@ -13,24 +15,8 @@ import {ProcessChartData} from '../../core/datastructures/process-chart-data.mod
     styleUrls: ['./calculator.component.css'],
 })
 export class CalculatorComponent implements OnInit {
-    calculatedProcess: {
-        monthly?: {
-            [key: number]: CalculatedAutomationProcess;
-        };
-        yearly?: {
-            [key: number]: CalculatedAutomationProcess;
-        };
-    } = {};
-
-    monthlySavingsChartData: ProcessChartData = {
-        data: [],
-        labels: [],
-    };
-
-    yearlySavingsChartData: ProcessChartData = {
-        data: [],
-        labels: [],
-    };
+    calculatedProcess: IntervalCalculatedAutomationProcess = {};
+    previewBarData: IntervalProcessChartData = {};
 
     constructor() {}
 
@@ -39,37 +25,9 @@ export class CalculatorComponent implements OnInit {
     processUpdate(process: AutomationProcess) {
         this.calculatedProcess = Calculator.calculateProcess(process);
 
-        // monthly
-
-        let labels = [];
-        let data = [];
-
-        Object.keys(this.calculatedProcess.monthly).forEach((key) => {
-            labels.push(`#${key}`);
-            data.push(this.calculatedProcess.monthly[key].savings);
-        });
-
-        this.monthlySavingsChartData = {
-            labels: labels,
-            data: data,
-        };
-
-        // yearly
-
-        labels = [];
-        data = [];
-
-        Object.keys(this.calculatedProcess.yearly).forEach((key) => {
-            labels.push(`#${key}`);
-            data.push(this.calculatedProcess.yearly[key].savings);
-        });
-
-        this.yearlySavingsChartData = {
-            labels: labels,
-            data: data,
-        };
-
-        console.log(this.calculatedProcess, this.monthlySavingsChartData);
+        const {monthly, yearly} = Calculator.convertToChartData(this.calculatedProcess);
+        this.previewBarData.monthly = monthly;
+        this.previewBarData.yearly = yearly;
     }
 
     keyAscOrder = (a: KeyValue<number, string>, b: KeyValue<number, string>): number => {

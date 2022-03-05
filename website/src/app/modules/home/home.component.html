@@ -179,7 +179,7 @@
         </p>
 
         <a
-            href="#"
+            href="/calculator"
             class="mt-8 whitespace-nowrap inline-flex items-center justify-center px-5 py-2 border border-transparent rounded-md text-base text-white bg-red-600 hover:bg-red-700">
             Ersparnisrechner testen
             <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-5 h-5'"></svg-icon>
@@ -188,7 +188,7 @@
 
     <div class="w-full lg:w-3/5">
         <h3 class="text-gray-300 font-medium text-xl mb-6">Monatliche Ersparnis bei x Prozessen</h3>
-        <aconio-calculator-preview></aconio-calculator-preview>
+        <aconio-calculator-preview [bars]="previewBarData.monthly"></aconio-calculator-preview>
     </div>
 </div>
 

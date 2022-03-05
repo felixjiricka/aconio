@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {IntervalProcessChartData} from '../../core/datastructures/automation-process.model';
+import {Calculator} from '../../core/datastructures/calculator';
 
 @Component({
     selector: 'aconio-home',
@@ -6,7 +8,11 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-    constructor() {}
+    previewBarData: IntervalProcessChartData;
+
+    constructor() {
+        this.previewBarData = Calculator.convertToChartData(Calculator.calculateProcess());
+    }
 
     ngOnInit(): void {}
 }

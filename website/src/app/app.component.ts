@@ -20,10 +20,7 @@ export class AppComponent implements AfterViewInit {
     @ViewChild(HeaderComponent, {static: false}) header: HeaderComponent;
 
     constructor(private iconReg: SvgIconRegistryService, private router: Router) {
-        ICONS.forEach((icon) => {
-            console.log(icon);
-            this.iconReg.addSvg(icon.name, icon.data);
-        });
+        ICONS.forEach((icon) => this.iconReg.addSvg(icon.name, icon.data));
 
         this.router.events.subscribe((event: any) => {
             if (event instanceof NavigationEnd) {
@@ -41,8 +38,7 @@ export class AppComponent implements AfterViewInit {
 
         const scroller = document.getElementById('site-wrapper');
 
-        Scrollbar.use(DisableScrollPlugin);
-        Scrollbar.use(DisableScrollWhenModalOpenPlugin);
+        Scrollbar.use(DisableScrollPlugin, DisableScrollWhenModalOpenPlugin);
 
         const bodyScrollBar = Scrollbar.init(scroller, {
             damping: 0.1,

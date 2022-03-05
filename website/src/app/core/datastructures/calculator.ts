@@ -1,6 +1,17 @@
-import {AutomationProcess, CalculatedAutomationProcess} from './automation-process.model';
+import {
+    AutomationProcess,
+    CalculatedAutomationProcess,
+    IntervalCalculatedAutomationProcess,
+    IntervalProcessChartData,
+} from './automation-process.model';
 
 export class Calculator {
+    private static _default: AutomationProcess = {
+        hourlyRate: 120.0,
+        hours: 20.0,
+        monthly: 700.0,
+    };
+
     private static developmentOptions = {
         hourlyRate: 75,
         neededHours: 20,
@@ -8,17 +19,11 @@ export class Calculator {
 
     private static _defaultProcessKeys: number[] = [1, 2, 4, 10, 15];
 
-    public static calculateProcess(process: AutomationProcess) {
+    public static calculateProcess(process?: AutomationProcess) {
+        if (!process) process = this._default;
+
         const directSavings = Number(process.hours) * Number(process.hourlyRate);
-        console.log(directSavings);
-        const result: {
-            monthly?: {
-                [key: number]: CalculatedAutomationProcess;
-            };
-            yearly?: {
-                [key: number]: CalculatedAutomationProcess;
-            };
-        } = {
+        const result: IntervalCalculatedAutomationProcess = {
             monthly: {},
             yearly: {},
         };
@@ -44,5 +49,41 @@ export class Calculator {
         });
 
         return result;
+    }
+
+    public static convertToChartData(
+        calculated: IntervalCalculatedAutomationProcess
+    ): IntervalProcessChartData {
+        const chartData: IntervalProcessChartData = {};
+
+        // monthly
+        let labels = [];
+        let data = [];
+
+        Object.keys(calculated.monthly).forEach((key) => {
+            labels.push(`#${key}`);
+            data.push(calculated.monthly[key].savings);
+        });
+
+        chartData.monthly = {
+            labels: labels,
+            data: data,
+        };
+
+        // yearly
+        labels = [];
+        data = [];
+
+        Object.keys(calculated.yearly).forEach((key) => {
+            labels.push(`#${key}`);
+            data.push(calculated.yearly[key].savings);
+        });
+
+        chartData.yearly = {
+            labels: labels,
+            data: data,
+        };
+
+        return chartData;
     }
 }
