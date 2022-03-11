@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
-import { ProcessChartData } from '../../datastructures/automation-process.model';
+import {ProcessChartData} from '../../datastructures/automation-process.model';
 
 @Component({
     selector: 'aconio-calculator-preview',
@@ -76,18 +76,18 @@ export class CalculatorPreviewComponent implements OnChanges {
             borderSkipped: false,
             hoverBorderWidth: 2,
             hoverBorderColor: 'transparent',
-        }
+        };
 
         const BAR_COLORS = [
             {
                 static: '#dc2626',
-                hover: '#b91c1c'
+                hover: '#b91c1c',
             },
             {
                 static: '#fff',
-                hover: '#fff'
+                hover: '#fff',
             },
-        ]
+        ];
 
         console.log(input);
         input.data.forEach((data, index) => {
@@ -96,8 +96,8 @@ export class CalculatorPreviewComponent implements OnChanges {
                 data: data,
                 backgroundColor: BAR_COLORS[index].static,
                 hoverBackgroundColor: BAR_COLORS[index].hover,
-                ...BAR_CONFIG
+                ...BAR_CONFIG,
             });
-        })
+        });
     }
 }
