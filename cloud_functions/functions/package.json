@@ -1,31 +1,40 @@
 {
-  "name": "functions",
-  "scripts": {
-    "lint": "eslint --ext .js,.ts .",
-    "build": "tsc",
-    "serve": "npm run build && firebase emulators:start --only functions",
-    "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "lint:prettier": "prettier --write 'src/*.ts'"
-  },
-  "engines": {
-    "node": "16"
-  },
-  "main": "lib/index.js",
-  "dependencies": {
-    "firebase-admin": "^9.8.0",
-    "firebase-functions": "^3.14.1"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.9.1",
-    "@typescript-eslint/parser": "^3.8.0",
-    "eslint": "^7.6.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.22.0",
-    "firebase-functions-test": "^0.2.0",
-    "typescript": "^3.8.0"
-  },
-  "private": true
+    "name": "functions",
+    "scripts": {
+        "lint": "eslint --ext .js,.ts .",
+        "build": "tsc",
+        "serve": "npm run build && firebase emulators:start --only functions",
+        "shell": "npm run build && firebase functions:shell",
+        "start": "npm run shell",
+        "deploy": "firebase deploy --only functions",
+        "logs": "firebase functions:log",
+        "lint:prettier": "prettier --write 'src/**/*.ts'",
+        "copy-templates": "copyfiles -u 1 views/*.html lib/views",
+        "prebuild": "npm run lint:prettier",
+        "postbuild": "npm run copy-templates",
+        "build:watch": "tsc --watch --preserveWatchOutput",
+        "serve:watch": "npm run build:watch | firebase emulators:start --only functions"
+    },
+    "engines": {
+        "node": "16"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+        "copyfiles": "^2.4.1",
+        "firebase-admin": "^9.8.0",
+        "firebase-functions": "^3.14.1",
+        "handlebars": "^4.7.7",
+        "nodemailer": "^6.7.2"
+    },
+    "devDependencies": {
+        "@types/nodemailer": "^6.4.4",
+        "@typescript-eslint/eslint-plugin": "^3.9.1",
+        "@typescript-eslint/parser": "^3.8.0",
+        "eslint": "^7.6.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-import": "^2.22.0",
+        "firebase-functions-test": "^0.2.0",
+        "typescript": "^3.8.0"
+    },
+    "private": true
 }
