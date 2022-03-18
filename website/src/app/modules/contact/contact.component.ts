@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
             phone: ['', []],
             email: ['', [Validators.email, Validators.required]],
             message: ['', [Validators.required]],
-            dsgvo: [false, [Validators.requiredTrue]]
+            dsgvo: [false, [Validators.requiredTrue]],
         });
     }
 
@@ -39,16 +39,15 @@ export class ContactComponent implements OnInit {
             const value = this.contactForm.value;
             const formData = _.omit(value, ['dsgvo']) as ContactModel;
             console.log(formData);
-            this.contactService.send(formData)
-                .subscribe((status: number) => {
-                    this.pendingRequest = false;
-                    if (status === 200) {
-                        this.isSuccess = true;
-                        this.contactForm.reset();
-                    } else {
-                        this.isError = true;
-                    }
-                });
+            this.contactService.send(formData).subscribe((status: number) => {
+                this.pendingRequest = false;
+                if (status === 200) {
+                    this.isSuccess = true;
+                    this.contactForm.reset();
+                } else {
+                    this.isError = true;
+                }
+            });
         } else {
             console.log(this.contactForm.errors);
         }

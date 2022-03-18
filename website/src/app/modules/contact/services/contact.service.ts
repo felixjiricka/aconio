@@ -12,7 +12,8 @@ export class ContactService {
     constructor(private http: HttpClient) {}
 
     send(data: ContactModel): Observable<number> {
-        return this.http.post(`${environment.apiBase}/handleContactRequest`, data, {observe: 'response'})
+        return this.http
+            .post(`${environment.apiBase}/handleContactRequest`, data, {observe: 'response'})
             .pipe(map((val: HttpResponse<any>) => val.status));
     }
 }

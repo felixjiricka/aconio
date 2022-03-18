@@ -52,38 +52,63 @@
                     class="w-full form-input my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                     placeholder="Vorname"
                     formControlName="firstname"
-                    [ngClass]="{'border-2 border-red-600': contactForm.get('firstname').invalid && (contactForm.get('firstname').dirty || contactForm.get('firstname').touched)}"/>
+                    [ngClass]="{
+                        'border-2 border-red-600':
+                            contactForm.get('firstname').invalid &&
+                            (contactForm.get('firstname').dirty ||
+                                contactForm.get('firstname').touched)
+                    }" />
                 <input
                     type="text"
                     class="w-full form-input my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                     placeholder="Nachname"
                     formControlName="lastname"
-                    [ngClass]="{'border-2 border-red-600': contactForm.get('lastname').invalid && (contactForm.get('lastname').dirty || contactForm.get('lastname').touched)}"
-                    />
+                    [ngClass]="{
+                        'border-2 border-red-600':
+                            contactForm.get('lastname').invalid &&
+                            (contactForm.get('lastname').dirty ||
+                                contactForm.get('lastname').touched)
+                    }" />
             </div>
             <input
                 type="text"
                 class="w-full form-input my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                 placeholder="Firma"
                 formControlName="company"
-                [ngClass]="{'border-2 border-red-600': contactForm.get('company').invalid && (contactForm.get('company').dirty || contactForm.get('company').touched)}"/>
+                [ngClass]="{
+                    'border-2 border-red-600':
+                        contactForm.get('company').invalid &&
+                        (contactForm.get('company').dirty || contactForm.get('company').touched)
+                }" />
             <input
                 type="email"
                 class="w-full form-input my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                 placeholder="Email"
                 formControlName="email"
-                [ngClass]="{'border-2 border-red-600': contactForm.get('email').invalid && (contactForm.get('email').dirty || contactForm.get('email').touched)}"/>
+                [ngClass]="{
+                    'border-2 border-red-600':
+                        contactForm.get('email').invalid &&
+                        (contactForm.get('email').dirty || contactForm.get('email').touched)
+                }" />
             <input
                 type="tel"
                 class="w-full form-input my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                 placeholder="Mobil"
                 formControlName="phone"
-                [ngClass]="{'border-2 border-red-600': contactForm.get('phone').invalid && (contactForm.get('phone').dirty || contactForm.get('phone').touched)}"/>
+                [ngClass]="{
+                    'border-2 border-red-600':
+                        contactForm.get('phone').invalid &&
+                        (contactForm.get('phone').dirty || contactForm.get('phone').touched)
+                }" />
             <textarea
                 class="w-full form-textarea my-3 px-3 py-2 rounded-md focus:outline-none focus:border-red-600 focus:ring-red-600"
                 placeholder="Nachricht"
                 formControlName="message"
-                [ngClass]="{'border-2 border-red-600': contactForm.get('message').invalid && (contactForm.get('message').dirty || contactForm.get('message').touched)}"></textarea>
+                [ngClass]="{
+                    'border-2 border-red-600':
+                        contactForm.get('message').invalid &&
+                        (contactForm.get('message').dirty || contactForm.get('message').touched)
+                }"></textarea>
 
             <label class="my-3 inline-flex items-center">
                 <input
@@ -97,14 +122,14 @@
                 <button
                     class="w-auto px-7 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 inline-flex"
                     (click)="submit()"
-                    [disabled]="pendingRequest"
-                >
-                    <ng-container *ngIf="!pendingRequest">
-                        Anfrage versenden
-                    </ng-container>
+                    [disabled]="pendingRequest">
+                    <ng-container *ngIf="!pendingRequest"> Anfrage versenden </ng-container>
 
                     <ng-container *ngIf="pendingRequest">
-                        <svg-icon name="refresh" class="mr-4" [svgClass]="'w-5 h-5 animate-spin'"></svg-icon>
+                        <svg-icon
+                            name="refresh"
+                            class="mr-4"
+                            [svgClass]="'w-5 h-5 animate-spin'"></svg-icon>
 
                         Laden ...
                     </ng-container>
