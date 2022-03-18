@@ -4,6 +4,7 @@ import {CalculatorComponent} from './modules/calculator/calculator.component';
 import {HomeComponent} from './modules/home/home.component';
 import {ImprintComponent} from './modules/legal/pages/imprint/imprint.component';
 import {PrivacyPolicyComponent} from './modules/legal/pages/privacy-policy/privacy-policy.component';
+import {ContactComponent} from './modules/contact/contact.component';
 
 const routes: Routes = [
     {
@@ -14,6 +15,11 @@ const routes: Routes = [
     {
         path: 'calculator',
         component: CalculatorComponent,
+    },
+    // contact
+    {
+        path: 'contact',
+        component: ContactComponent,
     },
     // legal
     {

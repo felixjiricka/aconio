@@ -11,6 +11,7 @@ import {NgChartsModule} from 'ng2-charts';
 import {CalculatorModule} from './modules/calculator/calculator.module';
 import {registerLocaleData} from '@angular/common';
 import * as locale from '@angular/common/locales/de-AT';
+import {ContactModule} from './modules/contact/contact.module';
 
 registerLocaleData(locale.default, 'de-AT');
 
@@ -21,6 +22,7 @@ registerLocaleData(locale.default, 'de-AT');
         AppRoutingModule,
         CoreModule,
         HomeModule,
+        ContactModule,
         CalculatorModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
