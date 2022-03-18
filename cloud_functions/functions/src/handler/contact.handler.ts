@@ -10,11 +10,15 @@ export const handleContact = (req: Request, res: Response): Promise<void> => {
     const source = fs.readFileSync(filePath, 'utf-8').toString();
     const template = handlebars.compile(source);
 
-    const {name, sender, message} = req.body;
+    const {firstname, lastname, company, phone, email, message} = req.body;
 
     const replacements = {
-        name: name,
-        message: message,
+        firstname: firstname,
+        lastname: lastname,
+        company: company,
+        phone: phone,
+        email: email,
+        message: message
     };
 
     const replacedHTML = template(replacements);
@@ -23,7 +27,7 @@ export const handleContact = (req: Request, res: Response): Promise<void> => {
         from: 'internal@aconio.net',
         to: 'felixjiricka@outlook.com',
         subject: 'Aconio.net Kontaktanfrage',
-        replyTo: sender,
+        replyTo: email,
         html: replacedHTML,
     };
 
