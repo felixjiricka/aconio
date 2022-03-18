@@ -12,6 +12,7 @@
         "copy-templates": "copyfiles -u 1 views/*.html lib/views",
         "prebuild": "npm run lint:prettier",
         "postbuild": "npm run copy-templates",
+        "predeploy": "npm run copy-templates",
         "build:watch": "tsc --watch --preserveWatchOutput",
         "serve:watch": "npm run build:watch | firebase emulators:start --only functions"
     },

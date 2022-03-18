@@ -13,21 +13,23 @@ const corsHandler = cors({
     optionsSuccessStatus: 200,
 });
 
-import {Request, Response, https} from 'firebase-functions';
+import {Request, Response, region} from 'firebase-functions';
 import {handleContact} from './handler/contact.handler';
 
-export const handleContactRequest = https.onRequest((req: Request, res: Response) => {
-    corsHandler(req, res, () => {
-        if (req.method !== 'POST') {
-            return;
-        }
+export const handleContactRequest = region('europe-west1').https.onRequest(
+    (req: Request, res: Response) => {
+        corsHandler(req, res, () => {
+            if (req.method !== 'POST') {
+                return;
+            }
 
-        handleContact(req, res)
-            .then(() => {
-                res.status(200).send();
-            })
-            .catch((err) => {
-                res.status(500).send(err);
-            });
-    });
-});
+            handleContact(req, res)
+                .then(() => {
+                    res.status(200).send();
+                })
+                .catch((err) => {
+                    res.status(500).send(err);
+                });
+        });
+    }
+);
