@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./way-to-automate.component.css']
 })
 export class WayToAutomateComponent implements OnInit {
-
     constructor() {
     }
 
     ngOnInit(): void {
     }
-
 }

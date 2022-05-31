@@ -1,16 +1,18 @@
 <div class="flex flex-col items-center justify-center gap-4">
     <div class="rounded-full p-4 relative m-auto overflow-hidden">
-        <svg-icon [name]="icon" class="z-[3] text-white relative" [svgClass]="'w-10 h-10'"></svg-icon>
+        <svg-icon
+            [name]="icon"
+            class="z-[3] text-white relative"
+            [svgClass]="'w-10 h-10'"></svg-icon>
 
-        <img class="absolute inset-0 z-0" src="assets/svg/gradient-background.svg">
+        <img class="absolute inset-0 z-0" src="assets/svg/gradient-background.svg"/>
     </div>
 
     <h3 class="text-2xl text-gray-900 font-medium text-center">
-        {{title}}
+        {{ title }}
     </h3>
 
     <p class="text-base text-gray-800 text-center">
-        {{description}}
+        {{ description }}
     </p>
 </div>
-

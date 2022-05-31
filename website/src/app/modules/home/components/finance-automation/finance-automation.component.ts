@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./finance-automation.component.css']
 })
 export class FinanceAutomationComponent implements OnInit {
-
     constructor() {
     }
 
     ngOnInit(): void {
     }
-
 }

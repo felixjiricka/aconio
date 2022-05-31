@@ -14,7 +14,15 @@ import {WayToAutomateComponent} from './components/way-to-automate/way-to-automa
 import {FinanceAutomationComponent} from './components/finance-automation/finance-automation.component';
 
 @NgModule({
-    declarations: [HomeComponent, HeroComponent, ServicesComponent, ServiceCardComponent, RpaComponent, WayToAutomateComponent, FinanceAutomationComponent],
+    declarations: [
+        HomeComponent,
+        HeroComponent,
+        ServicesComponent,
+        ServiceCardComponent,
+        RpaComponent,
+        WayToAutomateComponent,
+        FinanceAutomationComponent
+    ],
     imports: [CommonModule, AngularSvgIconModule, CoreModule, RouterModule],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
