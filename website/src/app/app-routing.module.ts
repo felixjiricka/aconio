@@ -5,17 +5,11 @@ import {HomeComponent} from './modules/home/home.component';
 import {ImprintComponent} from './modules/legal/pages/imprint/imprint.component';
 import {PrivacyPolicyComponent} from './modules/legal/pages/privacy-policy/privacy-policy.component';
 import {ContactComponent} from './modules/contact/contact.component';
-import {RpaComponent} from './modules/rpa/rpa.component';
 
 const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-    },
-    // rpa
-    {
-        path: 'rpa',
-        component: RpaComponent,
     },
     // calculator
     {

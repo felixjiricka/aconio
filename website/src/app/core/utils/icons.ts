@@ -3,98 +3,110 @@ export const ICONS = [
     {
         name: 'arrow-right',
         data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
+       stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
             d="M14 5l7 7m0 0l-7 7m7-7H3" />
     </svg>`
     },
     {
-        name: 'clock',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+        name: 'workflow',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 394.953 394.953" stroke="currentColor">
+<path d="M394.953,325.334v-49.869c0-3.039-2.464-5.504-5.503-5.504h-44.375v-67.34c0-3.039-2.464-5.502-5.503-5.502H202.974 v-55.496h61.002c3.039,0,5.503-2.463,5.503-5.502V69.619c0-3.039-2.464-5.504-5.503-5.504H130.974
+ c-3.039,0-5.503,2.465-5.503,5.504v66.502c0,3.039,2.464,5.502,5.503,5.502h60.994v55.496H55.373c-3.04,0-5.503,2.463-5.503,5.502 v67.34H5.503c-3.039,0-5.503,2.465-5.503,5.504v49.869c0,3.039,2.464,5.504,5.503,5.504h99.747c3.039,0,5.503-2.465,5.503-5.504 v-49.869c0-3.039-2.464-5.504-5.503-5.504H60.875v-61.836h131.092v61.836h-44.371c-3.04,0-5.503,2.465-5.503,5.504v49.869
+ c0,3.039,2.463,5.504,5.503,5.504h99.751c3.04,0,5.503-2.465,5.503-5.504v-49.869c0-3.039-2.463-5.504-5.503-5.504h-44.374v-61.836
+ h131.096v61.836h-44.371c-3.04,0-5.503,2.465-5.503,5.504v49.869c0,3.039,2.463,5.504,5.503,5.504h99.751
+ C392.489,330.838,394.953,328.373,394.953,325.334z M136.477,130.617V75.121h121.996v55.496h-61.002H136.477z M99.748,280.967
+ v38.865H11.006v-38.865h44.367H99.748z M241.845,280.967v38.865H153.1v-38.865h44.371H241.845z M383.947,319.832h-88.746v-38.865
+ h44.371h44.375V319.832z"/>
+</svg>
+`
     },
     {
-        name: 'currency-dollar',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>`
-    },
-    {
-        name: 'exclamation-circle',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>`
-    },
-    {
-        name: 'document',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>`
-    },
-    {
-        name: 'thumb-up',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-      </svg>`
-    },
-    {
-        name: 'credit-card',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-      </svg>`
-    },
-    {
-        name: 'receipt-tax',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
-      </svg>`
-    },
-    {
-        name: 'shopping-cart',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>`
-    },
-    {
-        name: 'users',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>`
-    },
-    {
-        name: 'paper-clip',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
-      </svg>`
-    },
-    {
-        name: 'phone',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        name: 'robot',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 511.999 511.999" stroke="currentColor" fill="currentColor">
+
+    <path d="M424.464,226.038h-31.289c-4.637,0-8.394,3.758-8.394,8.394v17.485H370.51v-17.485c0-4.636-3.757-8.394-8.394-8.394
+      h-34.743v-17.351h34.743c4.637,0,8.394-3.758,8.394-8.394V66.121c0-20.285-16.502-36.787-36.787-36.787h-69.329V8.394
+      c0-4.636-3.757-8.394-8.394-8.394c-4.637,0-8.394,3.758-8.394,8.394v20.939h-69.33c-20.285,0-36.787,16.503-36.787,36.787v134.173
+      c0,4.636,3.757,8.394,8.394,8.394h34.744v17.351h-34.744c-4.637,0-8.394,3.758-8.394,8.394v17.485h-14.271v-17.485
+      c0-4.636-3.757-8.394-8.394-8.394h-31.29c-4.637,0-8.394,3.758-8.394,8.394v169.096c0,4.636,3.757,8.394,8.394,8.394h31.289
+      c4.637,0,8.394-3.758,8.394-8.394V303.215h14.271v68.203c0,4.636,3.757,8.394,8.394,8.394h14.9v75.713h-10.586
+      c-4.637,0-8.394,3.758-8.394,8.394v39.686c0,4.636,3.757,8.394,8.394,8.394h70.744c4.637,0,8.394-3.758,8.394-8.394v-39.686
+      c0-4.636-3.757-8.394-8.394-8.394h-10.585v-75.713h83.289v75.713h-10.586c-4.637,0-8.394,3.758-8.394,8.394v39.686
+      c0,4.636,3.757,8.394,8.394,8.394h70.744c4.637,0,8.394-3.758,8.394-8.394v-39.686c0-4.636-3.757-8.394-8.394-8.394h-10.585
+      v-75.713h14.9c4.637,0,8.394-3.758,8.394-8.394v-68.203h14.271v100.312c0,4.636,3.757,8.394,8.394,8.394h31.289
+      c4.637,0,8.394-3.758,8.394-8.394V234.431C432.857,229.796,429.1,226.038,424.464,226.038z M110.43,395.134H95.929V242.826h14.501
+      V395.134z M141.489,286.428h-14.271v-17.723h14.271V286.428z M158.276,191.9V66.121c0-11.028,8.972-20,20-20h155.447
+      c11.028,0,20,8.972,20,20V191.9H158.276z M310.586,208.686v17.351H201.414v-17.351H310.586z M216.547,472.314v22.898h-53.957
+      v-22.898H216.547z M181.571,455.526v-75.713h15.998v75.713H181.571z M349.409,472.314v22.898h-53.957v-22.898H349.409z
+       M314.433,455.526v-75.713h15.998v75.713h0H314.433z M353.723,363.024H158.276V242.826h195.446V363.024z M384.781,286.428H370.51
+      v-17.723h14.271V286.428z M416.07,395.134h-14.501V242.826h14.501V395.134z"/>
+
+    <path d="M204.236,84.744c-20.803,0-37.727,16.924-37.727,37.726c0,20.802,16.924,37.726,37.727,37.726
+      c20.802,0.001,37.726-16.923,37.726-37.726C241.963,101.668,225.039,84.744,204.236,84.744z M204.236,143.409
+      c-11.545,0-20.94-9.392-20.94-20.939c0-11.545,9.394-20.939,20.94-20.939c11.545,0,20.939,9.393,20.939,20.939
+      C225.175,134.016,215.782,143.409,204.236,143.409z"/>
+
+    <path d="M307.765,84.744c-20.803,0-37.727,16.924-37.727,37.726c0,20.802,16.924,37.727,37.727,37.727
+      c20.802,0,37.726-16.924,37.726-37.726S328.567,84.744,307.765,84.744z M307.765,143.409c-11.545,0-20.94-9.393-20.94-20.939
+      c0-11.545,9.393-20.939,20.94-20.939c11.545,0,20.939,9.393,20.939,20.939C328.703,134.016,319.31,143.409,307.765,143.409z"/>
+
+    <path d="M256.001,270.9c-30.317,0-54.982,24.664-54.982,54.982c0,4.636,3.757,8.394,8.394,8.394h93.176
+      c4.637,0,8.394-3.758,8.394-8.394C310.982,295.565,286.318,270.9,256.001,270.9z M218.735,317.488
+      c3.835-17.036,19.089-29.8,37.265-29.8c18.177,0,33.43,12.764,37.265,29.8H218.735z"/>
+
+    <circle cx="326.744" cy="267.215" r="8.394"/>
+
+    <circle cx="185.257" cy="267.215" r="8.394"/>
+
 </svg>`
     },
     {
-        name: 'at-symbol',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+        name: 'people-talking',
+        data: `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="611.999px" height="612px" viewBox="0 0 611.999 612" fill="currentColor" stroke="currentColor"
+  >
+  <path d="M416.5,497.25v40.627c0,6.021-4.434,13.02-9.935,15.468c-21.321,9.486-79.477,28.905-198.315,28.905
+    c-118.839,0-176.995-19.419-198.316-28.905C4.433,550.897,0,543.898,0,537.876V497.25c0-60.88,46.353-111.387,105.5-118.15
+    c1.797-0.206,4.462,0.563,5.927,1.624c27.271,19.743,60.658,31.526,96.824,31.526c36.167,0,69.553-11.783,96.824-31.526
+    c1.465-1.061,4.131-1.83,5.928-1.624C370.147,385.863,416.5,436.37,416.5,497.25z M85,246.5c0-68.069,55.181-123.25,123.25-123.25
+    c68.069,0,123.25,55.181,123.25,123.25c0,68.068-55.181,123.25-123.25,123.25C140.181,369.75,85,314.568,85,246.5z
+     M149.935,295.417c5.607,18.538,29.624,32.474,58.409,32.474c28.785,0,52.803-13.936,58.41-32.474H149.935z M586.5,29.75h-204
+    c-14.025,0-25.5,11.475-25.5,25.5v119.255c0,13.885,11.36,25.245,25.245,25.245h0.255v34c0,7.004,7.996,11.003,13.601,6.8
+    l52.133-39.1c1.247-0.935,3.542-1.7,5.1-1.7H586.5c14.025,0,25.499-11.475,25.499-25.5v-119C612,41.225,600.525,29.75,586.5,29.75z
+    "/>
 </svg>`
     },
     {
-        name: 'refresh',
-        data: `<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>`
+        name: 'smile',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+</svg>`
     },
     {
-        name: 'fa-bullseye',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke="currentColor" fill="currentColor"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path stroke="currentColor" d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224C273.7 224 288 238.3 288 256zM112 256C112 176.5 176.5 112 256 112C335.5 112 400 176.5 400 256C400 335.5 335.5 400 256 400C176.5 400 112 335.5 112 256zM256 336C300.2 336 336 300.2 336 256C336 211.8 300.2 176 256 176C211.8 176 176 211.8 176 256C176 300.2 211.8 336 256 336zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64C149.1 64 64 149.1 64 256C64 362 149.1 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/></svg>`
+        name: 'alert',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+    <line x1="12" y1="9" x2="12" y2="13"></line>
+    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+</svg>`
     },
     {
-        name: 'fa-chip',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke="currentColor" fill="currentColor"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path stroke="currentColor" d="M160 352h192V160H160V352zM448 176h48C504.8 176 512 168.8 512 160s-7.162-16-16-16H448V128c0-35.35-28.65-64-64-64h-16V16C368 7.164 360.8 0 352 0c-8.836 0-16 7.164-16 16V64h-64V16C272 7.164 264.8 0 256 0C247.2 0 240 7.164 240 16V64h-64V16C176 7.164 168.8 0 160 0C151.2 0 144 7.164 144 16V64H128C92.65 64 64 92.65 64 128v16H16C7.164 144 0 151.2 0 160s7.164 16 16 16H64v64H16C7.164 240 0 247.2 0 256s7.164 16 16 16H64v64H16C7.164 336 0 343.2 0 352s7.164 16 16 16H64V384c0 35.35 28.65 64 64 64h16v48C144 504.8 151.2 512 160 512c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448h64v48c0 8.836 7.164 16 16 16c8.838 0 16-7.164 16-16V448H384c35.35 0 64-28.65 64-64v-16h48c8.838 0 16-7.164 16-16s-7.162-16-16-16H448v-64h48C504.8 272 512 264.8 512 256s-7.162-16-16-16H448V176zM384 368c0 8.836-7.162 16-16 16h-224C135.2 384 128 376.8 128 368v-224C128 135.2 135.2 128 144 128h224C376.8 128 384 135.2 384 144V368z"/></svg>`
+        name: 'dollar-sign',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
+    <line x1="12" y1="1" x2="12" y2="23"></line>
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+</svg>`
     },
     {
-        name: 'fa-chess-king',
-        data: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" stroke="currentColor" fill="currentColor"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path stroke="currentColor" d="M367.1 448H79.97c-26.51 0-48.01 21.49-48.01 47.1C31.96 504.8 39.13 512 47.96 512h352c8.838 0 16-7.163 16-16C416 469.5 394.5 448 367.1 448zM416.1 160h-160V112h16.01c17.6 0 31.98-14.4 31.98-32C303.1 62.4 289.6 48 272 48h-16.01V32C256 14.4 241.6 0 223.1 0C206.4 0 191.1 14.4 191.1 32.01V48H175.1c-17.6 0-32.01 14.4-32.01 32C143.1 97.6 158.4 112 175.1 112h16.01V160h-160C17.34 160 0 171.5 0 192C0 195.2 .4735 198.4 1.437 201.5L74.46 416h299.1l73.02-214.5C447.5 198.4 448 195.2 448 192C448 171.6 430.1 160 416.1 160z"/></svg>`
+        name: 'trending-up',
+        data: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+    <polyline points="17 6 23 6 23 12"></polyline>
+</svg>`
     }
 ];

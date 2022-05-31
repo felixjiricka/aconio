@@ -1,20 +1,26 @@
-<div class="relative py-16 overflow-hidden">
-    <div class="flex flex-col justify-center items-center mx-auto z-10 relative gap-12">
-        <h1 class="text-4xl font-medium text-white">Erste Schritte</h1>
+<div class="min-h-[70vh] w-full relative overflow-hidden flex">
+    <div class="flex flex-col gap-12 m-auto items-center z-10">
+        <h1 class="text-center text-6xl text-white font-medium" #heroTypewriter></h1>
 
-        <h2 class="text-lg md:text-xl lg:text-2xl mx-auto text-center text-white">
-            Sind Sie bereit den vergeudeten Stunden ein Ende zu bereiten?
+        <span class="text-3xl text-red-600 font-medium">
+            #WeAutomateYouProfit
+        </span>
+
+        <h2 class="text-center text-2xl text-white">
+            Wir automatisieren Ihre Unternehmensprozesse, damit Sie sich<br>
+            auf die wichtigen Dinge konzentrieren können.
         </h2>
 
         <button routerLink="/contact"
-                class="bg-gray-100 text-gray-900 rounded-3xl px-7 py-2 flex items-center justify-center text-lg group hover:px-8 ease-in duration-200">
+                class="bg-gray-100 text-gray-900 rounded-3xl px-7 py-3 flex items-center justify-center text-lg group hover:px-8 ease-in duration-200">
             Jetzt loslegen
             <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-6 h-6'"></svg-icon>
         </button>
     </div>
 
+
     <!-- background -->
-    <div class="absolute inset-0 bg-black opacity-25 z-[1]"></div>
+    <div class="absolute w-full h-full bg-black opacity-40 z-[1]"></div>
     <svg class="absolute -inset-10 blur-md" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <rect x="0" y="0" width="100%" height="100%" fill="#801520"></rect>
         <defs>

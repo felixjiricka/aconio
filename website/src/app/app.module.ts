@@ -12,7 +12,6 @@ import {CalculatorModule} from './modules/calculator/calculator.module';
 import {registerLocaleData} from '@angular/common';
 import * as locale from '@angular/common/locales/de-AT';
 import {ContactModule} from './modules/contact/contact.module';
-import {RpaModule} from './modules/rpa/rpa.module';
 
 registerLocaleData(locale.default, 'de-AT');
 
@@ -24,7 +23,6 @@ registerLocaleData(locale.default, 'de-AT');
         CoreModule,
         HomeModule,
         ContactModule,
-        RpaModule,
         CalculatorModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),

@@ -1,0 +1,15 @@
+aconio-service-card::ng-deep div {
+    @apply ml-0;
+}
+
+aconio-service-card::ng-deep h3 {
+    @apply text-xl w-full text-left;
+}
+
+aconio-service-card::ng-deep p {
+    @apply text-left;
+}
+
+aconio-service-card::ng-deep svg-icon::ng-deep svg {
+    @apply w-7 h-7;
+}
