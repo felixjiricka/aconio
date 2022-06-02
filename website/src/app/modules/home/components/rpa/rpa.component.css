@@ -7,7 +7,7 @@ aconio-service-card::ng-deep h3 {
 }
 
 aconio-service-card::ng-deep p {
-    @apply text-left;
+    @apply w-full text-left;
 }
 
 aconio-service-card::ng-deep svg-icon::ng-deep svg {
