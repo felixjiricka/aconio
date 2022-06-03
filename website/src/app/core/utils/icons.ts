@@ -108,5 +108,20 @@ export const ICONS = [
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
     <polyline points="17 6 23 6 23 12"></polyline>
 </svg>`
+    },
+    {
+        name: 'arrow-right',
+        data: `<svg width="44" height="22" viewBox="0 0 44 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42 10.8889H2M33.1111 19.7778L42 10.8889L33.1111 19.7778ZM42 10.8889L33.1111 2L42 10.8889Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    },
+    {
+        name: 'arrow-left',
+        data: `
+        <svg width="44" height="22" viewBox="0 0 44 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 10.8889H42M10.8889 19.7778L2 10.8889L10.8889 19.7778ZM2 10.8889L10.8889 2L2 10.8889Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
     }
 ];

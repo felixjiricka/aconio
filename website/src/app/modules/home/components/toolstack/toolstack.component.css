@@ -1,0 +1,7 @@
+swiper::ng-deep .swiper-slide {
+    transition: opacity 300ms ease-out;
+}
+
+swiper::ng-deep .swiper-slide:not(.swiper-slide-visible) {
+    opacity: 0.15 !important;
+}

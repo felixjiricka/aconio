@@ -14,9 +14,9 @@ export class HeroComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         const typewriter = new Typewriter(this.heroTypewriterEl.nativeElement, {
-            strings: ['Effizienz.', 'Optimierung.'],
+            strings: ['Effizienz steigern.', 'Mitarbeiter entlasten.', 'Prozesse Automatisieren.'],
             autoStart: true,
-            loop: true
+            loop: false
         });
     }
 }

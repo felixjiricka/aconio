@@ -1,0 +1,107 @@
+<div class="bg-gray-100 py-28">
+    <div class="container relative flex !mt-0 gap-16 lg:gap-24 xl:gap-32 2xl:gap-48 flex-col lg:flex-row">
+        <div class="w-full lg:w-1/2 xl:w-2/5 flex flex-col justify-between z-10">
+            <div class="">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Unsere Toolstacks</h1>
+
+                <p class="text-base sm:text-lg md:text-xl 2xl:text-2xl text-gray-600 mt-4">
+                    Mittels Robotic Process Automation entwickeln wir Software die menschliche
+                    Interaktionen mit digitalen Systemen simulieren kann. Diese Simulationen werden
+                    <b>Software Roboter</b> genannt.
+                </p>
+            </div>
+
+            <!-- indicator -->
+            <div class="flex gap-4">
+                <div class="bg-gray-200 w-8 h-2.5 rounded-lg duration-200 ease-in cursor-pointer"
+                     *ngFor="let dot of [0, 1]" (click)="slideTo(dot)"
+                     [ngClass]="{'bg-[#A01A27] w-16': dot === activeSlideIndex}">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 xl:w-3/5">
+            <swiper #swiper [virtual]="true" [slidesPerView]="1" [spaceBetween]="100" [watchSlidesProgress]="true"
+                    (slideChange)="updateIndex($event)" class="!overflow-visible h-full w-full">
+                <ng-template swiperSlide let-data>
+                    <div class="h-full w-full rounded-2xl bg-gray-200 cursor-pointer relative">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold absolute -translate-y-1/2 -translate-x-8 opacity-75">
+                            Automation</h1>
+
+                        <div class="px-12 pt-14 pb-10">
+                            <p class="text-sm md:text-base">
+                                Automatisierung bedeutet nicht immer eine umfangreiche RPA Anwendung. Oft müssen nur
+                                Daten von einem System exportiert, verarbeitet, und in ein anderes System importiert
+                                werden. Diese simplen Automatisierungen sind häufig effiziente Problemlöser für
+                                Unternehmen und können mit unseren Workflow Engines einfach und effektiv umgesetzt
+                                werden.
+                                <br><br>
+                                Besteht jedoch Bedarf für umfangreichere Automatisierungen (z.B. automatisches Erstellen
+                                und Versenden eines Angebots), so können wir mithilfe von Tools wie UiPath einen
+                                virtuellen Assistenen entwickeln, welcher gesamte Prozesseaubläufe über mehrere Systeme
+                                hinweg übernehmen kann.
+                                <br><br>
+                                Von simplen Workflows bishin zur End-To-End Automatisierung mittels Robotic Process
+                                Automation - mithilfe unseres umfangreichen Automation Toolstacks können wir nahezu
+                                jeden Use-Case abdecken!
+                            </p>
+
+                            <div class="flex flex-col mt-10 m-auto gap-6">
+                                <span class="font-medium text-gray-900 m-auto text-base">Wir arbeiten mit</span>
+
+                                <div class="flex flex-col md:flex-row gap-8 mx-auto">
+                                    <img src="assets/logos/automation%20toolstack/knime.png" class="h-8 mx-auto"/>
+                                    <img src="assets/logos/automation%20toolstack/ninox.png" class="h-8 mx-auto"/>
+                                    <img src="assets/logos/automation%20toolstack/uipath.png" class="h-8 mx-auto"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template swiperSlide>
+                    <div class="h-full w-full rounded-2xl bg-gray-200 cursor-pointer relative">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold absolute -translate-y-1/2 -translate-x-8 opacity-75">
+                            Development</h1>
+
+                        <div class="px-12 pt-14 pb-10">
+                            <p class="text-sm md:text-base">
+                                Sollte eine reine Prozess-Automatisierung für Ihren Anwendungsfall nicht ausreichen,
+                                bieten wir auch Design & Entwicklung einer vollumfänglichen Software-Lösung für Ihr
+                                Unternehmen.
+                                <br><br>
+                                Oft sind fertige ERP Systeme zu generisch gehalten und decken sich nicht genau mit Ihren
+                                Anforderungen. Manchmal möchten Sie aber auch ihre aktuellen Systeme beibehalten,
+                                benötigen jedoch eine Software als zentrale Schnittstelle, in welcher Sie Ihre Daten aus
+                                verschiedensten Quellen an einer Stelle verwalten und auswerten können.
+                                <br><br>
+                                In solchen Fällen nehmen wir Ihre Anforderungen genau auf und entwickeln mithilfe von
+                                bewährten Technologien eine perfekt abgestimmte Software Lösung.
+                            </p>
+
+                            <div class="flex flex-col mt-10 m-auto gap-6">
+                                <span class="font-medium text-gray-900 m-auto text-base">Wir arbeiten mit</span>
+
+                                <div class="flex flex-col md:flex-row gap-8 mx-auto">
+                                    <img src="assets/logos/development%20toolstack/git.png" class="h-8 mx-auto"/>
+                                    <img src="assets/logos/development%20toolstack/github.png" class="h-8 mx-auto"/>
+                                    <img src="assets/logos/development%20toolstack/go.png" class="h-8 mx-auto"/>
+                                    <img src="assets/logos/development%20toolstack/postgresql.png" class="h-8 mx-auto"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+
+        <div class="bg-[#A01A27] rounded-lg px-4 py-2 flex gap-8 absolute right-0 -bottom-28 translate-y-1/2">
+            <button (click)="slidePrev()">
+                <svg-icon name="arrow-left" class="-rotate-180 text-white" [svgClass]="'h-6 w-6'"></svg-icon>
+            </button>
+            <button (click)="slideNext()">
+                <svg-icon name="arrow-right" class="text-white" [svgClass]="'h-6 w-6'"></svg-icon>
+            </button>
+        </div>
+    </div>
+</div>
