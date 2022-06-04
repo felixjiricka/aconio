@@ -1,65 +1,78 @@
-<div class="min-h-[70vh] w-full relative overflow-hidden flex">
+<div class="min-h-[80vh] md:min-h-[70vh] w-full relative overflow-hidden flex">
     <div class="flex flex-col gap-12 m-auto items-center z-10">
-        <h1 class="text-center text-6xl text-white font-medium" #heroTypewriter></h1>
+        <h1 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-medium"
+            #heroTypewriter></h1>
 
-        <span class="text-3xl text-red-600 font-medium"> #WeAutomateYouProfit </span>
+        <span class="text-xl md:text-2xl lg:text-3xl text-red-600 font-medium"> #WeAutomateYouProfit </span>
 
-        <h2 class="text-center text-2xl text-white">
+        <h2 class="text-center text-base sm:text-lg md:text-xl 2xl:text-2xl text-white">
             Wir automatisieren Ihre Unternehmensprozesse, damit Sie sich<br/>
             auf die wichtigen Dinge konzentrieren können.
         </h2>
 
-        <button
-            routerLink="/contact"
-            class="bg-gray-100 text-gray-900 rounded-3xl px-7 py-3 flex items-center justify-center text-sm sm:text-base md:text-lg group hover:px-8 ease-in duration-200">
-            Jetzt loslegen
-            <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-6 h-6'"></svg-icon>
-        </button>
+        <div class="flex flex-col gap-4 md:flex-row md:gap-8">
+            <button
+                routerLink="/contact"
+                class="bg-gray-100 text-gray-900 rounded-3xl px-7 py-3 flex items-center justify-center text-sm sm:text-base md:text-lg group hover:px-8 ease-in duration-200">
+                Jetzt loslegen
+                <svg-icon name="arrow-right" class="ml-4" [svgClass]="'w-6 h-6'"></svg-icon>
+            </button>
+
+            <a
+                href="//www.linkedin.com/company/aconio/"
+                target="_blank"
+                class="bg-transparent text-white px-7 py-3 flex items-center justify-center text-sm sm:text-base md:text-lg group ease-in duration-200">
+                Mehr über RPA erfahren
+            </a>
+        </div>
     </div>
 
     <!-- background -->
-    <div class="absolute w-full h-full bg-black opacity-40 z-[1]"></div>
-    <svg
-        class="absolute -inset-10 blur-md"
-        viewBox="0 0 900 600"
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1">
-        <rect x="0" y="0" width="100%" height="100%" fill="#801520"></rect>
-        <defs>
-            <linearGradient id="grad1_0" x1="33.3%" y1="0%" x2="100%" y2="100%">
-                <stop offset="20%" stop-color="#801520" stop-opacity="1"></stop>
-                <stop offset="80%" stop-color="#801520" stop-opacity="1"></stop>
-            </linearGradient>
-        </defs>
-        <defs>
-            <linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%" y2="100%">
-                <stop offset="20%" stop-color="#801520" stop-opacity="1"></stop>
-                <stop offset="80%" stop-color="#801520" stop-opacity="1"></stop>
-            </linearGradient>
-        </defs>
-        <g transform="translate(900, 0)">
-            <path fill="#DC2638">
-                <animate
-                    attributeName="d"
-                    dur="20s"
-                    repeatCount="indefinite"
-                    values="M0 432.7C-55.3 425.7 -110.6 418.7 -165.6 399.7C-220.6 380.8 -275.3 349.8 -304.8 304.8C-334.3 259.7 -338.6 200.5 -355.7 147.3C-372.8 94.2 -402.7 47.1 -432.7 0L0 0Z;
+    <div class="absolute w-full h-full bg-black opacity-40 z-[5]"></div>
+    <div class="absolute -inset-10 blur-md z-[1]">
+        <svg
+            class="h-full w-full"
+            viewBox="0 0 900 600"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin slice"
+            version="1.1">
+            <rect x="0" y="0" width="100%" height="100%" fill="#801520"></rect>
+            <defs>
+                <linearGradient id="grad1_0" x1="33.3%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="20%" stop-color="#801520" stop-opacity="1"></stop>
+                    <stop offset="80%" stop-color="#801520" stop-opacity="1"></stop>
+                </linearGradient>
+            </defs>
+            <defs>
+                <linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%" y2="100%">
+                    <stop offset="20%" stop-color="#801520" stop-opacity="1"></stop>
+                    <stop offset="80%" stop-color="#801520" stop-opacity="1"></stop>
+                </linearGradient>
+            </defs>
+            <g transform="translate(900, 0)">
+                <path fill="#DC2638">
+                    <animate
+                        attributeName="d"
+                        dur="20s"
+                        repeatCount="indefinite"
+                        values="M0 432.7C-55.3 425.7 -110.6 418.7 -165.6 399.7C-220.6 380.8 -275.3 349.8 -304.8 304.8C-334.3 259.7 -338.6 200.5 -355.7 147.3C-372.8 94.2 -402.7 47.1 -432.7 0L0 0Z;
 
            M0 432.7C-64 433.6 -128.1 434.5 -165.6 399.7C-203.1 365 -214 294.6 -253.9 253.9C-293.7 213.1 -362.6 201.9 -397.3 164.6C-431.9 127.2 -432.3 63.6 -432.7 0L0 0Z;
                    M0 432.7C-55.3 425.7 -110.6 418.7 -165.6 399.7C-220.6 380.8 -275.3 349.8 -304.8 304.8C-334.3 259.7 -338.6 200.5 -355.7 147.3C-372.8 94.2 -402.7 47.1 -432.7 0L0 0Z"/>
-            </path>
-        </g>
-        <g transform="translate(0, 600)">
-            <path fill="#DC2638">
-                <animate
-                    attributeName="d"
-                    dur="20s"
-                    repeatCount="indefinite"
-                    values="M0 -432.7C62.3 -432.4 124.6 -432.1 165.6 -399.7C206.6 -367.4 226.3 -303 259.5 -259.5C292.7 -216 339.4 -193.2 370.5 -153.5C401.6 -113.7 417.1 -56.8 432.7 0L0 0Z;
+                </path>
+            </g>
+            <g transform="translate(0, 600)">
+                <path fill="#DC2638">
+                    <animate
+                        attributeName="d"
+                        dur="20s"
+                        repeatCount="indefinite"
+                        values="M0 -432.7C62.3 -432.4 124.6 -432.1 165.6 -399.7C206.6 -367.4 226.3 -303 259.5 -259.5C292.7 -216 339.4 -193.2 370.5 -153.5C401.6 -113.7 417.1 -56.8 432.7 0L0 0Z;
 
            M0 -432.7C42 -394 84 -355.3 141.2 -340.9C198.4 -326.5 270.8 -336.5 305.9 -305.9C341.1 -275.4 338.9 -204.3 353.8 -146.6C368.8 -88.8 400.7 -44.4 432.7 0L0 0Z;
                    M0 -432.7C62.3 -432.4 124.6 -432.1 165.6 -399.7C206.6 -367.4 226.3 -303 259.5 -259.5C292.7 -216 339.4 -193.2 370.5 -153.5C401.6 -113.7 417.1 -56.8 432.7 0L0 0Z"/>
-            </path>
-        </g>
-    </svg>
+                </path>
+            </g>
+        </svg>
+    </div>
 </div>
