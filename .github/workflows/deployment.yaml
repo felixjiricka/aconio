@@ -1,0 +1,68 @@
+name: Aconio Website
+
+on:
+    push:
+        branches: [ production ]
+    pull_request:
+        branches: [ production ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v1
+
+            -   name: Node Setup
+                uses: actions/setup-node@v1
+                with:
+                    node-version: 14.19.0
+
+            -   name: npm install and npm run build
+                run: |
+                    cd website
+                    npm i
+                    npm run build:prod
+
+            -   uses: actions/upload-artifact@v3
+                with:
+                    name: frontend
+                    path: ./website/dist/aconio
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+
+            -   uses: actions/checkout@v2
+
+            -   uses: actions/download-artifact@v3
+                with:
+                    name: frontend
+                    path: ./website/dist/aconio
+
+            -   name: Create Private Key File & SSH Config
+                run: |
+                    mkdir -p ~/.ssh/
+                    echo "$SSH_KEY" > ~/.ssh/deployment.key
+                    chmod 600 ~/.ssh/deployment.key
+                    cat >>~/.ssh/config <<END
+                    Host deployment
+                      HostName $SSH_HOST
+                      User $SSH_USER
+                      IdentityFile ~/.ssh/deployment.key
+                      StrictHostKeyChecking no
+                    END
+                env:
+                    SSH_KEY: ${{ secrets.SSH_DEPLOY_PRIVATE_KEY }}
+                    SSH_USER: ${{ secrets.SSH_DEPLOY_USER }}
+                    SSH_HOST: ${{ secrets.SSH_DEPLOY_HOST }}
+
+            -   name: Execute SSH Command to Add To Known Hosts
+                run: ssh deployment 'sleep 1'
+
+            -   name: Copy Build Artifact
+                run: |
+                    scp -r -i ~/.ssh/deployment.key ./website/dist/aconio/* $SSH_USER@$SSH_HOST:/data/web/e127781/html
+                env:
+                    SSH_USER: ${{ secrets.SSH_DEPLOY_USER }}
+                    SSH_HOST: ${{ secrets.SSH_DEPLOY_HOST }}
