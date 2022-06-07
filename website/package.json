@@ -27,7 +27,7 @@
         "angular-svg-icon": "^13.0.0",
         "bluebird": "^3.7.2",
         "chart.js": "^3.6.0",
-        "gsap": "^3.9.1",
+        "gsap": "^3.10.4",
         "lodash": "^4.17.21",
         "ng2-charts": "^3.0.8",
         "rxjs": "~6.6.0",

@@ -2,22 +2,25 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {SvgIconRegistryService} from 'angular-svg-icon';
 import {ICONS} from './core/utils/icons';
 import Scrollbar from 'smooth-scrollbar';
-import {ScrollTrigger} from 'gsap/all';
-import {gsap} from 'gsap/all';
+import SmoothScrollbar from 'smooth-scrollbar';
+import {gsap, ScrollTrigger} from 'gsap/all';
 import {DisableScrollPlugin} from './core/plugins/DisableScrollPlugin';
 import {DisableScrollWhenModalOpenPlugin} from './core/plugins/DisableScrollOpenModal';
 import {HeaderComponent} from './core/components/header/header.component';
 import {NavigationEnd, Router} from '@angular/router';
-import SmoothScrollbar from 'smooth-scrollbar';
+import {HeroComponent} from './modules/home/components/hero/hero.component';
+import {HeaderMode, HeaderService} from './core/services/header.service';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
     title = 'Aconio';
 
     @ViewChild(HeaderComponent, {static: false}) header: HeaderComponent;
+    @ViewChild(HeroComponent, {static: false}) heroEl: ElementRef;
 
     constructor(private iconReg: SvgIconRegistryService, private router: Router) {
         ICONS.forEach((icon) => this.iconReg.addSvg(icon.name, icon.data));
