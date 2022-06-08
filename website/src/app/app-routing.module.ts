@@ -17,10 +17,12 @@ const routes: Routes = [
         component: CalculatorComponent,
     },
     // contact
+    /*
     {
         path: 'contact',
         component: ContactComponent,
     },
+     */
     // legal
     {
         path: 'legal',

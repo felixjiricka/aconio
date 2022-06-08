@@ -52,8 +52,10 @@ export class AppComponent implements AfterViewInit {
         bodyScrollBar.addListener((status) => {
             var offset = status.offset;
 
+            /*
             this.header.element.nativeElement.style.top = offset.y + 'px';
             this.header.element.nativeElement.style.left = offset.x + 'px';
+             */
             ScrollTrigger.update();
         });
 
