@@ -5,6 +5,7 @@ import {HomeComponent} from './modules/home/home.component';
 import {ImprintComponent} from './modules/legal/pages/imprint/imprint.component';
 import {PrivacyPolicyComponent} from './modules/legal/pages/privacy-policy/privacy-policy.component';
 import {ContactComponent} from './modules/contact/contact.component';
+import {TermsOfServiceComponent} from './modules/legal/pages/terms-of-service/terms-of-service.component';
 
 const routes: Routes = [
     {
@@ -29,16 +30,20 @@ const routes: Routes = [
         children: [
             {
                 path: 'imprint',
-                component: ImprintComponent,
+                component: ImprintComponent
             },
             {
                 path: 'privacy',
-                component: PrivacyPolicyComponent,
+                component: PrivacyPolicyComponent
+            },
+            {
+                path: 'terms',
+                component: TermsOfServiceComponent
             },
             {
                 path: '**',
-                redirectTo: '/',
-            },
+                redirectTo: '/'
+            }
         ],
     },
 ];
